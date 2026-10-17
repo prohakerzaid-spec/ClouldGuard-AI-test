@@ -1,20 +1,25 @@
 # CloudGuard AI
 
-Source bundle for the CloudGuard AI local-simulation dashboard. No real GitHub, AWS, or Azure API calls are made by the demo.
+CloudGuard AI is a frontend demo of an AI-assisted cloud security review workflow. It displays a sample infrastructure pull request, highlights a simulated AWS S3 security finding, and lets you try an approval or rejection flow.
+
+## Demo features
+
+- Sample pull request and Terraform change
+- Example finding for a public S3 bucket (`AWS-S3-001`, `CWE-284`)
+- Simulated scan log and estimated cost savings
+- Approval and rejection controls
+
+> **Demo only:** The pull request, scan results, and savings estimate are simulated. This app does not connect to GitHub or AWS, change cloud resources, or apply real fixes. Do not use it as a production security scanner.
 
 ## Run locally
 
-Requirements: Node.js 24 and pnpm.
+### Requirements
 
-```sh
+- Node.js 24+
+- pnpm
+
+From the project root:
+
+```bash
 pnpm install
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/cloudguard-ai run dev
-```
 
-Open http://localhost:5173.
-
-To build the static site:
-
-```sh
-PORT=5173 BASE_PATH=/ pnpm --filter @workspace/cloudguard-ai run build
-```
